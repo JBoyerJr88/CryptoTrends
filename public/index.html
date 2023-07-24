@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <a href="public/likes.html">BY LIKES</a>
+    <a href="public/socsent.html">BY SOCIAL SENTIMENT</a>
+    
+</head>
+<body>
+
+      <script type="text/javascript" src="public/script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <link rel="stylesheet" href="styles.css">
+      
+
+
+      <div>
+        <h1> Crypto Trends</h1>
+      </div>
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
+
+   <h3>Explanation</h3>
+   <p>The chart below looks at Twitter sentiment analysis with regards to the top 10 cryptocurrencies.  It then displays what are the top trending tokens by the number of users posting about them.
+      This can give us a good indiciation of the current social sentiment of crypocurrencies.
+   </p>
+
+      <script>
+    //Fetches data from node server using asnyc function
+       async function getData(){
+        const response = await fetch('/data');
+        const data = await response.json();
+        console.log(data);
+        var newData = JSON.parse(data);
+        console.log(newData);
+        return newData;
+       };
+
+
+       //Takes data obtained from fetch request above and converts to an array
+       getData()
+        .then(newData => {
+            const data_arr = Array.from(newData);
+            var labels = [];
+            var values = [];
+
+            for (var i = 0; i < data_arr.length; i++){
+                //Iterates through array to find specific values in data object
+                labels.push(data_arr[i].ticker);
+                values.push(data_arr[i].posts);
+            }
+            
+         
+         
+      
+   //Configures chart
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: labels,
+    datasets: [{
+      label: '# of Posts',
+      data: values,
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+});
+
+        </script>
+      
+</body>
+</html>
