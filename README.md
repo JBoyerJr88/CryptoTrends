@@ -7,4 +7,4 @@ Utilizes Twitter API to visual social sentiment regarding cryptocurrencies.  Thi
 
 ## Updates
 
- - Added project to github, eventhough new changes to the Twitter API pricing broke this project. (08/2023)
+ - May be issues with API pull due to Twitter API price changes. (08/2023)
