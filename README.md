@@ -8,3 +8,10 @@ Utilizes Twitter API to visual social sentiment regarding cryptocurrencies.  Thi
 ## Updates
 
  - May be issues with API pull due to Twitter API price changes. (08/2023)
+
+
+## Table of Contents
+- [Installation]
+- [Usage]
+- [Features]
+- [License]
