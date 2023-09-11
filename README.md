@@ -28,7 +28,7 @@ Utilizes Twitter API to visual social sentiment regarding cryptocurrencies.  Thi
 The project went through the following phases:
 
 1. **Planning**:  The application was developed to solve the problem of achieving a somewhat reasonable metric when deciding to invent in cryptocurrencies.  Unlike equities, which are representations of a publicly held business, a currency is a representation of a country's economic standing.  Since crytpocurrencies do not apply to either of the previous situations, it is difficult to get a metric on its "value".  The conclusion is that cryptocurrencies derive most of their value from the "network effect".  Therefore, being able to measure social sentiment for these cryptocurrencies utilizing a social media platform will provide us with some indication on individuals feel about a particular token.
-2. **Analysis**:  
+2. **Analysis**:  The project must be able to pull data from the selected platform, Twitter
 3. **Design**:  
 4. **Development**:
 5. **Testing**:
